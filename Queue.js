@@ -1,37 +1,32 @@
 let queue = [];
 const maxSize = 5;
-let currentSize = queue.length
+let currentSize = queue.length;
 
-function addQueue(newVal){
-  if(currentSize >= maxSize){
-    console.log('limit reached')
+function addQueue(newVal) {
+  if (currentSize >= maxSize) {
+    console.log(" queue limit reached");
+  } else {
+    queue[currentSize] = newVal;
+    currentSize++;
   }
-    else{
-      queue[currentSize] = newVal;
-      currentSize ++;
-    }
-
 }
-function removeQueue(){
-  if(currentSize>0){
-    for(let i=0; i<queue.length; i++){
-      queue[i] = queue[i+1];
+function removeQueue() {
+  if (currentSize > 0) {
+    for (let i = 0; i < queue.length; i++) {
+      queue[i] = queue[i + 1];
     }
-    currentSize --;
+    currentSize--;
     queue.length = currentSize;
+  } else {
+    console.log("queue is empty");
   }
-  else{
-    console.log('queue is empty')
-  }
-  
 }
-addQueue(18)
-addQueue(19)
+addQueue(18);
+addQueue(19);
 removeQueue();
 console.log(queue);
 
 // removeQueue();
-
 
 // let queue = [];
 // let maxSize = 5;
