@@ -24,6 +24,8 @@ function removeQueue() {
 addQueue(18);
 addQueue(19);
 removeQueue();
+removeQueue();
+removeQueue();
 console.log(queue);
 
 // removeQueue();
