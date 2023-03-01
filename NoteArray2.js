@@ -1,7 +1,7 @@
 const note = [50, 10, 5, 1];
 
 function getNotes(note, amount) {
-  let result = {};
+  const result = {};
   let reminder = amount;
   for (let i = 0, l = note.length; i < l; i++) {
     if (reminder !== 0) {
