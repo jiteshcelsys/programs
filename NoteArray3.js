@@ -1,7 +1,7 @@
 const note = [50, 10, 5, 1];
 let count = 0;
 
-function NoteArray3(note, amount) {
+function NumberOfNote(note, amount) {
   const result = {};
   for (let i = 0, l = note.length; i < l; i++) {
     while (amount >= note[i]) {
@@ -14,4 +14,4 @@ function NoteArray3(note, amount) {
   return result;
 }
 
-console.log(NoteArray3(note, 111));
+console.log(NumberOfNote(note, 111));
