@@ -13,4 +13,4 @@ function getNotes(note, amount) {
   console.log(result);
 }
 
-getNotes(note, 101);
+getNotes(note, 102);
