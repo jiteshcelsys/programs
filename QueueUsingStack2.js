@@ -29,6 +29,7 @@ Iqueue(14);
 Iqueue(24);
 // deQueueStack();
 // deQueueStack();
+console.log(arr);
 
 /*
 24
@@ -52,4 +53,3 @@ Iqueue(24);
 // deQueueStack();
 // deQueueStack();
 
-console.log(arr);
