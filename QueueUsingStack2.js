@@ -13,14 +13,13 @@ function Iqueue(newVal) {
 }
 
 function deQueueStack() {
-  if (currentSize > 0) {
-    for (let i = 0; i < arr.length; i++) {
-      arr[i] = arr[i + 1];
-    }
-    currentSize = currentSize - 1;
-    arr.length = currentSize;
-  } else {
-    console.log("all elments is deleted");
+  const deQueue = [];
+  for (let i = arr.length - 1; i > 0; i--) {
+    deQueue.push(arr[i]);
+  }
+  arr = [];
+  for (let i = deQueue.length - 1; i >= 0; i--) {
+    arr.push(deQueue[i]);
   }
 }
 
@@ -28,8 +27,29 @@ Iqueue(4);
 Iqueue(10);
 Iqueue(14);
 Iqueue(24);
+// deQueueStack();
+// deQueueStack();
 
-deQueueStack();
-deQueueStack();
+/*
+24
+14
+10
+4
+*/
+
+/*
+10
+14
+24
+ */
+
+/*
+24
+14
+10
+*/
+
+// deQueueStack();
+// deQueueStack();
 
 console.log(arr);
