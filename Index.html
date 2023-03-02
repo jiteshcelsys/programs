@@ -1,18 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <input type="number">
- <button >Enqueue</button>
- <button>Dequeue</button>
- <ol>
-  <li></li>
- </ol>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="number" id="input" />
+    <button id="Enqueue">Enqueue</button>
+    <button id="Dequeue">Dequeue</button>
+    <ol id="list"></ol>
+    <script>
+      let LisItem = document.getElementById('list');
+      let input = document.getElementById('input');
+      let EnqueueBtn = document.getElementById('Enqueue');
+      let DequeueBtn = document.getElementById('Dequeue');
+      const arr = [];
+      let currentSize = 0;
+      const maxSize = 5;
+
+      function Iqueue(newVal) {
+        if (currentSize >= maxSize) {
+       
+        } else {
+          arr[currentSize] = newVal;
+          currentSize += 1;
+        }
+
+        LisItem.innerHTML = "";
+        arr.map((item) => {
+          LisItem.innerHTML += `
+             <li>${item}</li>
+                       `;
+        });
+        console.log(arr);
+      }
+      function deQueueStack() {
+        const deQueue = [];
+        let k = arr.length;
+        for (let i = k - 1; i > 0; i--) {
+          deQueue.push(arr[i]);
+        }
+        arr.length = 0;
+        let q = deQueue.length;
+        for (let i = q - 1; i >= 0; i--) {
+          arr.push(deQueue[i]);
+        }
+        LisItem.innerHTML = "";
+        arr.map((item) => {
+          LisItem.innerHTML += `
+             <li>${item}</li>
+                       `;
+        });
+        console.log(arr);
+      }
+
+      DequeueBtn.addEventListener('click', () => {
+        deQueueStack();
+      });
+
+      EnqueueBtn.addEventListener('click', (req) => {
+        Iqueue(input.value);
+        input.value = '';
+      });
+    </script>
+  </body>
 </html>
