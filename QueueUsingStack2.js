@@ -14,11 +14,13 @@ function Iqueue(newVal) {
 
 function deQueueStack() {
   const deQueue = [];
-  for (let i = arr.length - 1; i > 0; i--) {
+  let k = arr.length;
+  for (let i = k - 1; i > 0; i--) {
     deQueue.push(arr[i]);
   }
   arr = [];
-  for (let i = deQueue.length - 1; i >= 0; i--) {
+ let q = deQueue.length;
+  for (let i = q - 1; i >= 0; i--) {
     arr.push(deQueue[i]);
   }
 }
