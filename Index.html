@@ -7,59 +7,82 @@
     <title>Document</title>
   </head>
   <style>
-    .input{
-     display: flex;
-     flex-direction: column;
-     width: 500px;
-     margin: auto;
-     
+    .input {
+      display: flex;
+      flex-direction: column;
+      width: 500px;
+      margin: auto;
     }
-    .ButtonStyle{
+    .ButtonStyle {
       display: flex;
       justify-content: space-around;
+      padding-top: 5px;
+    }
+    .ButtonStyleEnqueue:active {
+      background-color: black;
+      color: whitesmoke;
+    }
+    .ButtonStyleDequeue:active {
+      background-color: black;
+      color: whitesmoke;
+    }
+    .heading {
+      margin: auto;
+      padding-bottom: 10px;
+    }
+    .list {
+      display: flex;
+      justify-content: center;
     }
   </style>
   <body>
-  <div class = 'input'>
-    <input type="number" id="input" />
-    <div class = 'ButtonStyle'>
-      <button id="Enqueue">Enqueue</button>
-    <button id="Dequeue">Dequeue</button>
+    <div class="input">
+      <h1 class="heading">Enqueue Dequeue operation</h1>
+      <input type="number" id="input" />
+      <div class="ButtonStyle">
+        <button id="Enqueue" class="ButtonStyleEnqueue">Enqueue</button>
+        <button id="Dequeue" class="ButtonStyleDequeue">Dequeue</button>
+      </div>
     </div>
-  </div>
-    <ol id="list"></ol>
+    <div class="list">
+      <ol id="list"></ol>
+    </div>
+
     <script>
-      const LisItem = document.getElementById('list');
-      const input = document.getElementById('input');
-      const EnqueueBtn = document.getElementById('Enqueue');
-      const DequeueBtn = document.getElementById('Dequeue');
+      const LisItem = document.getElementById("list");
+      const input = document.getElementById("input");
+      const EnqueueBtn = document.getElementById("Enqueue");
+      const DequeueBtn = document.getElementById("Dequeue");
       const arr = [];
       let currentSize = 0;
       const maxSize = 5;
 
       function Iqueue(newVal) {
-        if(newVal !== ''){
-        if (currentSize >= maxSize) {
-          alert('Maximum size achieved')
-       
-        } else {
-          arr[currentSize] = newVal;
-          currentSize += 1;
-        }
+        if (newVal !== "") {
+          if (currentSize >= maxSize) {
+            alert("Maximum size achieved");
+          } else {
+            arr[currentSize] = newVal;
+            currentSize += 1;
+          }
 
-        LisItem.innerHTML = '';
-        arr.map((item) => {
-          LisItem.innerHTML += `
+          LisItem.innerHTML = "";
+          arr.map((item) => {
+            LisItem.innerHTML += `
              <li>${item}</li>
                        `;
-        });
-        console.log(arr);
-      }
+          });
+          console.log(arr);
+        }
+        else{
+          alert('enter value in the input field before entering');
+        }
       }
       function deQueueStack() {
         const deQueue = [];
         let k = arr.length;
-        for (let i = k - 1; i > 0; i--) {
+        if(k){
+          for (let i = k - 1; i > 0; i--) {
           deQueue.push(arr[i]);
         }
         arr.length = 0;
@@ -67,22 +90,27 @@
         for (let i = q - 1; i >= 0; i--) {
           arr.push(deQueue[i]);
         }
-        LisItem.innerHTML = '';
+        LisItem.innerHTML = "";
         arr.map((item) => {
           LisItem.innerHTML += `
              <li>${item}</li>
                        `;
         });
+        }
+        else{
+          alert('all the items are empty')
+        }
+        
         console.log(arr);
       }
 
-      DequeueBtn.addEventListener('click', () => {
+      DequeueBtn.addEventListener("click", () => {
         deQueueStack();
       });
 
-      EnqueueBtn.addEventListener('click', (req) => {
+      EnqueueBtn.addEventListener("click", (req) => {
         Iqueue(input.value);
-        input.value = '';
+        input.value = "";
       });
     </script>
   </body>
