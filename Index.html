@@ -6,10 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+  <style>
+    .input{
+     display: flex;
+     flex-direction: column;
+     width: 500px;
+     margin: auto;
+     
+    }
+    .ButtonStyle{
+      display: flex;
+      justify-content: space-around;
+    }
+  </style>
   <body>
+  <div class = 'input'>
     <input type="number" id="input" />
-    <button id="Enqueue">Enqueue</button>
+    <div class = 'ButtonStyle'>
+      <button id="Enqueue">Enqueue</button>
     <button id="Dequeue">Dequeue</button>
+    </div>
+  </div>
     <ol id="list"></ol>
     <script>
       const LisItem = document.getElementById('list');
@@ -21,20 +38,23 @@
       const maxSize = 5;
 
       function Iqueue(newVal) {
+        if(newVal !== ''){
         if (currentSize >= maxSize) {
+          alert('Maximum size achieved')
        
         } else {
           arr[currentSize] = newVal;
           currentSize += 1;
         }
 
-        LisItem.innerHTML = "";
+        LisItem.innerHTML = '';
         arr.map((item) => {
           LisItem.innerHTML += `
              <li>${item}</li>
                        `;
         });
         console.log(arr);
+      }
       }
       function deQueueStack() {
         const deQueue = [];
@@ -47,7 +67,7 @@
         for (let i = q - 1; i >= 0; i--) {
           arr.push(deQueue[i]);
         }
-        LisItem.innerHTML = "";
+        LisItem.innerHTML = '';
         arr.map((item) => {
           LisItem.innerHTML += `
              <li>${item}</li>
