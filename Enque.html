@@ -68,9 +68,11 @@
 
           lisItem.innerHTML = '';
           arr.map((item) => {
-            lisItem.innerHTML += `
+            lisItem.innerHTML = `
              <li>${item}</li>
-                       `;
+                        `+lisItem.innerHTML;
+          }).filter((li)=>{
+            return li !== 'null'
           });
           console.log(arr);
         } else {
@@ -81,6 +83,7 @@
         const deQueue = [];
         let k = arr.length;
         if (k) {
+          currentSize--;
           for (let i = k - 1; i > 0; i--) {
             deQueue.push(arr[i]);
           }
@@ -89,6 +92,7 @@
           for (let i = q - 1; i >= 0; i--) {
             arr.push(deQueue[i]);
           }
+          console.log(arr);
           lisItem.innerHTML = '';
           arr.map((item) => {
             lisItem.innerHTML += `
@@ -96,6 +100,7 @@
                        `;
           });
         } else {
+          arr.length=0;
           alert('all the items are empty');
         }
         console.log(arr);
