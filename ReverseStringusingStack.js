@@ -22,7 +22,7 @@ function reverseStr(item) {
   }
 }
 
-let str = "jitesh";
+let str = "jitesh ";
 str = str.split("");
 reverseStr(str);
 console.log(str.join(""));

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Linked List</h1>
+  <script>
+    // class based approach
+ class Linked {
+  constructor(element){
+    this.head ={
+      value:element,
+      next:null
+    }
+    this.tail = this.head
+    this.size = 1
+  }
+  appendNode(nodeData){
+    let newNode ={
+      value:nodeData,
+      next:null
+    };
+    this.tail.next= newNode;
+    this.tail =newNode
+    this.size++;
+  }
+  traversing(){
+    let counter = 0;
+    let currentNode = this.head;
+    while(counter<this.size){
+      console.log(currentNode)
+      currentNode = currentNode.next;
+      counter++;
+    }
+  }
+ }
+ let node =new Linked(100);
+   node.appendNode(200);
+   node.appendNode(300);
+   node.traversing();
+   console.log(node);
+//---------------------------------->
+//function based approach
+// let obj ={
+//   value:'',
+//   next:null
+// }
+// function LinkedList(node){
+//   obj.value=node
+
+//   obj.next={
+//     value:node,
+//     next:null
+//   }
+//   console.log(obj)
+// }
+// LinkedList(330)
+
+
+  </script>
+  
+</body>
+</html>
