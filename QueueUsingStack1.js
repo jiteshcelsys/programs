@@ -7,7 +7,7 @@ function Iqueue(newVal) {
     console.log('Max size' + newVal);
   } else {
     arr[currentSize] = newVal;
-    currentSize += 1;
+    currentSize += 1;//[1,2,3,4,5]
   }
 }
 

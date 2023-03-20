@@ -56,8 +56,8 @@
       const arr = [];
       let currentSize = 0;
       const maxSize = 5;
-
       function iQueue(newVal) {
+        
         if (newVal !== '') {
           if (currentSize >= maxSize) {
             alert('Maximum size achieved');
@@ -71,9 +71,7 @@
             lisItem.innerHTML = `
              <li>${item}</li>
                         `+lisItem.innerHTML;
-          }).filter((li)=>{
-            return li !== 'null'
-          });
+          })
           console.log(arr);
         } else {
           alert('enter value in the input field before entering');
@@ -94,7 +92,14 @@
           }
           console.log(arr);
           lisItem.innerHTML = '';
-          arr.map((item) => {
+          const reverseArr =[]
+          for(let i=k-2; i>=0; i--){
+
+            reverseArr.push(arr[i])
+
+          }
+         
+          reverseArr.map((item) => {
             lisItem.innerHTML += `
              <li>${item}</li>
                        `;

@@ -1,9 +1,9 @@
 function Lpattern(num){
   let result =''
-  for(let i=1; i<=num; i++){
-    for(let j=1; j<=num; j++){
-      if(j==1||i==num){
-        result += '*' + ' '
+  for(let row=1; row<=num; row++){
+    for(let column=1; column<=num; column++){
+      if(column==1 || row==num){
+        result +=  '*' + ' '
         
       }
       else{
@@ -13,8 +13,6 @@ function Lpattern(num){
     result+='\n'
   }
   console.log(result)
-
-  
 }
-Lpattern(15);
+Lpattern(7);
 // console.log('object')

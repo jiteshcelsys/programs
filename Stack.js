@@ -17,7 +17,6 @@ function pop() {
   }
   console.log("all elements is removed from an array");
 }
-console.log(currentSize);
 push(5);
 push(4);
 push(52);

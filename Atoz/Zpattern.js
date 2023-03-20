@@ -3,7 +3,7 @@ function ZPattern(num) {
   for (let i = 1; i <= num; i++) {
     for (let j = 1; j <= num; j++) {
       if (i === 1 || i === num|| i + j === num +1) {
-        result += '*';
+        result += '*'
       } else { 
         result += ' ' ;
       }
@@ -12,4 +12,4 @@ function ZPattern(num) {
   }
   console.log(result);
 }
-ZPattern(18);
+ZPattern(8);

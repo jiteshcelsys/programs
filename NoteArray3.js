@@ -9,6 +9,7 @@ function NumberOfNote(note, amount) {
       count++;
     }
     result[note[i]] = parseInt(count);
+    console.log(result)
     count = 0;
   }
   return result;

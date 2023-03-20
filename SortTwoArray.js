@@ -4,6 +4,7 @@ const k = arr1.length + arr2.length;
 let arr3 = [];
 let x = 0;
 let y = 0;
+//sort two sorted arrays in a single array
 
 for (let i = 0; i < k; i++) {
   if (arr1[x] < arr2[y]) {
