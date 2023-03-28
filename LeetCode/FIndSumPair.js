@@ -1,12 +1,12 @@
 function FindSumPair(array) {
   let left = 0;
   let right = array.length - 1;
-  let result;
   while (left < right) {
     let sum = array[left] + array[right];
     if (sum === 0) {
       return [array[left], array[right]];
     } else if (sum > 0) {
+      console.log(right)
       right--;
     } else {
       left++;

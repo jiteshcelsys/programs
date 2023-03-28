@@ -1,13 +1,32 @@
+function LinkedList(){
+  this.head = null;
+  this.tail =null;
 
-
-var removeDuplicates = function(nums) {
-let arr = [];
-for(let i = 0; i < nums.length; i++){
-  if(!arr.includes(nums[i])){
-    arr.push(nums[i])
-  }
 }
-return arr
-};
+function Node(value,next, prev){
+  this.value = value;
+  this.next = next;
+  this.prev = prev;
+}
+LinkedList.prototype.addToHead = function (value){
+let headNode = new Node(value,this.head,null);
+if(this.head) this.head.prev = headNode;
+else this.tail = headNode;
+this.head =headNode
+}
 
-console.log(removeDuplicates([1,2,2,3]))
+LinkedList.prototype.addToTail = function (value){
+  let tailNode =new Node(value,null,this.tail);
+  if(this.tail) this.tail.next = tailNode;
+  else this.head = tailNode;
+  this.tail = tailNode
+}
+
+LinkedList.prototype.removeFromHead = function (){
+ if(!this.head) return null;
+ let val = this.head.value;//for checking purpose which value is removed
+ this.head= this.head.next;
+ if(this.head) this.head.prev =null
+ else this.tail =null;
+ return val;
+}

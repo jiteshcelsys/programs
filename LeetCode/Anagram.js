@@ -1,41 +1,18 @@
-var isAnagram = function (s, t) {
-  let check = t.split("");
-  for (let i = 0, l = check.length; i < l; i++) {
-    let desiredIndex = check.indexOf(t[i]);
-    console.log(desiredIndex);
-    if (desiredIndex || desiredIndex === 0) {
-      check.splice(desiredIndex, 1);
-      console.log(`${check.join()}`);
-    }
+function isAnagram(string1,string2){
+ if(string1.length !== string2.length){
+  return false;
+ }
+ let counter ={}
+ for (let letter of string1) {
+  counter[[letter]]=(counter[letter] || 0) +1;
+ }
+ console.log(counter);
+ for(let check of string2){
+  if(!counter[check]){
+    return false
   }
-  console.log(check);
-};
-
-// console.log(isAnagram("aacc", "ccac"));
-// console.log(isAnagram("anagram", "nagaram"));
-
-/**
- * @param {string} s
- * @param {string} t
- * @return {boolean}
- */
-var isAnagram1 = function (s, t) {
-  if (s.length === t.length) {
-    let string = s.split("");
-    for (let i = 0; i < string.length; i++) {
-      for (let j = 0; j < t.length; j++) {
-        let v = s.indexOf(t[i]);
-        if (v || v == 0) {
-          string.splice(v, 1);
-        }
-        if (!v) {
-          return false;
-        }
-      }
-    }
-  } else {
-    return false;
-  }
-  return true;
-};
-console.log(isAnagram1("car", "rat"));
+  counter[check]-=1
+ }
+ return true
+}
+console.log(isAnagram('hello','oellh'));

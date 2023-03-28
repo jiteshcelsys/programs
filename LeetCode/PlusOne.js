@@ -113,3 +113,20 @@ console.log(plusOneany([1,2,3]))
 //     }
 
 // };
+
+
+
+function LinkedList() {
+  this.head = null;
+  this.tail = null;
+}
+
+LinkedList.prototype.addToHead = function (value) {
+  var newNode = new Node(value, this.head, null);
+
+  if (this.head) this.head.prev = newNode;
+  else this.tail = newNode;
+  this.head = newNode;
+};
+
+const ll = new LinkedList();

@@ -14,27 +14,24 @@
 
 //without predefined function
 
-
-
-function getWordLength (data){
-  let arr =[]
-  let str ='';
-  for(let i=0; i<data.length; i++){
-    if(data[i]==' '){
-      if(str!==''){
+function getWordLength(data) {
+  let arr = [];
+  let str = "";
+  for (let i = 0; i < data.length; i++) {
+    if (data[i] == " ") {
+      if (str !== "") {
         arr.push(str);
-      };
-      str ='';
+      }
+      str = "";
+    } else {
+      str += data[i];
     }
-    else{
-      str +=data[i];
-    }
-    if(i==data.length-1){
-      if(str!==''){
-    arr.push(str)
+    if (i == data.length - 1) {
+      if (str !== "") {
+        arr.push(str);
       }
     }
   }
- return arr[arr.length-1].length;
+  return arr[arr.length - 1].length;
 }
-console.log(getWordLength('hello how are you       '))
+console.log(getWordLength("hello how are you       "));

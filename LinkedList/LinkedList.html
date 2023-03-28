@@ -1,67 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <h1>Linked List</h1>
-  <script>
-    // class based approach
- class Linked {
-  constructor(element){
-    this.head ={
-      value:element,
-      next:null
-    }
-    this.tail = this.head
-    this.size = 1
-  }
-  appendNode(nodeData){
-    let newNode ={
-      value:nodeData,
-      next:null
-    };
-    this.tail.next= newNode;
-    this.tail =newNode
-    this.size++;
-  }
-  traversing(){
-    let counter = 0;
-    let currentNode = this.head;
-    while(counter<this.size){
-      console.log(currentNode)
-      currentNode = currentNode.next;
-      counter++;
-    }
-  }
- }
- let node =new Linked(100);
-   node.appendNode(200);
-   node.appendNode(300);
-   node.traversing();
-   console.log(node);
-//---------------------------------->
-//function based approach
-// let obj ={
-//   value:'',
-//   next:null
-// }
-// function LinkedList(node){
-//   obj.value=node
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Linked List</h1>
+    <script>
+      function LinkedList() {
+        this.head = null;
+        this.tail = null;
+      }
 
-//   obj.next={
-//     value:node,
-//     next:null
-//   }
-//   console.log(obj)
-// }
-// LinkedList(330)
+      function Node(value, next, previous) {
+        this.value = value;
+        this.next = next;
+        this.previous = previous;
+      }
 
+      LinkedList.prototype.addToHead = function (value) {
+        var newNode = new Node(value, this.head, null);
+        if (this.head) this.head.previous = newNode;
+        else this.tail = newNode;
+        this.tail = newNode;
+      };
 
-  </script>
-  
-</body>
+      LinkedList.prototype.addToTail = function (value) {
+        var newNode = new Node(value, null, this.tail);
+        if (this.tail) this.tail.next = newNode;
+        else this.head = newNode;
+        this.tail = newNode;
+      };
+
+      LinkedList.prototype.removeHead = function () {
+        if (!this.head) return null;
+        var val = this.head.value;
+        this.head = this.head.next;
+        if (this.head) this.head.previous = null;
+        else this.tail = null;
+        return val;
+      };
+
+      LinkedList.prototype.removeTail = function () {
+        if (!this.tail) return null;
+        var val = this.tail.value;
+        this.tail = this.tail.prev;
+        if (this.tail) this.tail.next = null;
+        else this.head = null;
+        return val;
+      };
+
+      LinkedList.prototype.search = function (searchValue) {
+        var currentNode = this.head;
+        while (currentNode) {
+          if (currentNode.value == searchValue) return true;
+          currentNode = currentNode.next;
+        }
+        return false;
+      };
+
+      LinkedList.prototype.indexOff = function (value) {
+        let indexOfValue = this.head;
+        const data = [];
+        let counter = 0;
+        console.log(indexOfValue);
+        while (indexOfValue) {
+          if (indexOfValue.value == value) {
+            data.push(counter);
+          }
+          counter++;
+          indexOfValue = indexOfValue.next;
+        }
+        return data;
+      };
+
+      var ll = new LinkedList();
+
+      ll.addToHead(1000);
+      ll.addToHead(2000);
+      ll.addToHead(2000);
+      ll.addToHead(3000);
+      // console.log(ll.indexOff(2000));
+      // console.log(ll.search("bodye"));
+      console.log(ll);
+
+    </script>
+  </body>
 </html>

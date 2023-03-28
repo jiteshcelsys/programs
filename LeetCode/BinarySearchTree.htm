@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Binary search tree</title>
+  </head>
+  <body>
+    Binary search tree
+    <script>
+      class Node {
+        constructor(val) {
+          this.value = val;
+          this.left = null;
+          this.right = null;
+        }
+      }
+      class BStree {
+        constructor() {
+          this.root = null;
+        }
+        isTreeEmpty() {
+          return this.root === null;
+        }
+        makeTree(val) {
+          let newNode = new Node(val);
+          if (!this.root) {
+            this.root = newNode;
+          } else {
+            this.insertNode(this.root, newNode);
+          }
+        }
+        insertNode(root, newNode) {
+          if (root.value > newNode.value) {
+            if (root.left === null) {
+              root.left = newNode;
+            } else {
+              this.insertNode(root.left, newNode);
+            }
+          } else {
+            if (root.right === null) {
+              root.right = newNode;
+            } else {
+              this.insertNode(root.right, newNode);
+            }
+          }
+        }
+        // searchOperation(data,val){
+        //   if(data.root.value<val){
+        //     searchOperation(data.root.left,val)
+        //   }
+        //   if(data.root.value<val){
+        //     searchOperation(data.root.right,val)
+        //   }
+        //   if(data.root.left.value===val||data.root.right.value===val){
+        //     return true;
+        //   }
+        //   else{
+        //     return false;
+        //   }
+        //   console.log(data.root.value,val);
+        // }
+        
+      }
+     
+      let some= new BStree();
+      some.makeTree(20);
+      some.makeTree(18);
+      some.makeTree(15);
+      some.makeTree(10);
+      some.makeTree(30);
+      // console.log(some.searchOperation(some,18))
+      console.log(some)
+    </script>
+  </body>
+</html>
