@@ -8,5 +8,6 @@ function BubbleSorting(arr) {
   }
   return arr;
 }
-console.log(BubbleSorting([8, 2, 8, 2]));
+console.log(BubbleSorting([8, 2, 8, 2, 0, 199]));
 //comparing two alternative element and swap it and after each iteration of the 1st loop(i) loop we will get our largest element  which will be reflected in the second loop of iteration where the no. of iteration is reduced by value i .
+

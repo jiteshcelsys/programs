@@ -79,7 +79,8 @@ class SinglyLinkedList {
       current = current.next;
       count++;
     }
-    console.log(arr);
+    // console.log(arr);
+    return arr;
   }
   //by index find the value at the given index
   get(index) {
@@ -148,78 +149,78 @@ class SinglyLinkedList {
     this.length--;
     return true;
   }
-  reverse(){
-    if(!this.head) return false;
+  reverse() {
+    if (!this.head) return false;
     let node = this.head;
-    this.head = this.tail
+    this.head = this.tail;
     this.tail = node;
 
     let prev = null;
     let next;
-    let k =  this.length;
+    let k = this.length;
 
-    for(let  i = 0; i < k; i++){
+    for (let i = 0; i < k; i++) {
       next = node.next;
       node.next = prev;
       prev = node;
-      node = next
+      node = next;
     }
-    return true
+    return true;
   }
-  middleElement(){
-    let  k = Math.floor(this.length/2)+1;
+  middleElement() {
+    let k = Math.floor(this.length / 2) + 1;
     let counter = 0;
     let current = this.head;
-    let middleElement = current
-    while(counter !== k){
+    let middleElement = current;
+    while (counter !== k) {
       middleElement = current;
       current = current.next;
       counter++;
     }
-    return middleElement
+    return middleElement;
   }
-  numberOfTimes(value){
+  numberOfTimes(value) {
     let count = 0;
     let k = this.length;
     let current = this.head;
-   while(current){
-    if(current.value == value){
-      count++
+    while (current) {
+      if (current.value == value) {
+        count++;
+      }
+      current = current.next;
     }
-    current = current.next;
-   }
-   return count
+    return count;
   }
-  removeDuplicate(){
+  removeDuplicate() {
     let current = this.head;
 
-    while(current !== null){
-     let temp = current;
-     while(temp != null && temp.value == current.value){
-       temp = temp.next;
+    while (current !== null) {
+      let temp = current;
+      while (temp != null && temp.value == current.value) {
+        temp = temp.next;
       }
-       current.next = temp;
+      current.next = temp;
       current = current.next;
-      
     }
     // this.length --;
-
-    
-    return this
-}
+    return this;
+  }
   
 }
 let list = new SinglyLinkedList();
 list.push(1);
 list.push(2);
-list.push(3);
 list.push(4);
+list.push(4);
+list.push(5);
+list.push(2);
 list.push(1);
-list.push(5);
-list.push(5);
+// list.push(5);
+// list.push(5);
 // list.insert(1, "inserted successfully");
 // list.reverse();
 // console.log(list.numberOfTimes(3)+' '+'Times');
 // console.log(list.middleElement());
-list.removeDuplicate()
-list.print();
+// list.removeDuplicate()
+console.log(list.palindromeCheck())
+// list.print();

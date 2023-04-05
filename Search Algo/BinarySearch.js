@@ -3,7 +3,6 @@ function binarySearch(arr, number) {
   let max = arr.length - 1;
   while (min <= max) {
     let midIndex = Math.floor((min + max) / 2);
-    console.log("midIndex: " + midIndex + " min: " + min + " max: " + max);
     if (arr[midIndex] < number) {
       min = midIndex + 1;
     } else if (arr[midIndex] > number) {

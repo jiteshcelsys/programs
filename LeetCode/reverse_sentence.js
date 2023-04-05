@@ -1,4 +1,4 @@
-const data = "hello World how are you          ";
+const data = "hello World how are you";
 let result = "";
 let output = "";
 const length = data.length - 1;

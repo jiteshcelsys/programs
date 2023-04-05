@@ -32,29 +32,3 @@ const mergeSort = (array) => {
 console.log(mergeSort([1, 4, 2, 3, 5, 6]));
 //split the given array into two arrays and continue the splitting process until the array having the one element..
 //In mergeSort we have to implement the recursive functionality 
-function QuickSort(array) {
-  if (array.length === 1) {
-    console.log("object");
-    return array;
-  }
-  const pivot = array[array.length - 1];
-  const leftArr = [];
-  const rightArr = [];
-  for (let i = 0; i < array.length - 1; i++) {
-    if (array[i] < pivot) {
-      leftArr.push(array[i]);
-    } else {
-      rightArr.push(array[i]);
-    }
-  }
-  if (leftArr.length > 0 && rightArr.length > 0) {
-    return [...QuickSort(leftArr), pivot, ...QuickSort(rightArr)];
-  } else if (leftArr.length > 0) {
-    return [...QuickSort(leftArr), pivot];
-  } else {
-    return [pivot, ...QuickSort(rightArr)];
-  }
-}
-
-const arr = [3, 4, 1, 9, 6];
-console.log(QuickSort(arr));
