@@ -237,5 +237,56 @@ function reverseStringCompare(string) {
   console.log(result);
 }
 // hello boys --- olleh syob
-reverseStringCompare("hello boys");
+// reverseStringCompare("hello boys");
+ 
+//small the letter which is behind the vowel .
+ let vowel = 'AEIOU';
+ const str = 'HELLO HOW ARE YOU.';
+function vowelSmall(str){
+  let newStr = ''
+  for(let i = 0; i< str.length; i++){
+    if(vowel.includes(str[i-1])){
+      newStr += str[i].toLowerCase();
+    }
+    else{
+      newStr += str[i]
+    }
+  }
+  console.log(newStr)
+}
+// vowelSmall(str)
+//note array 
+// const note = [50, 10, 5, 1];
+// function NoteNumber (amount){
+//   const result = {};
+//   let remainder  = amount;
+//   for(let i = 0; i< note.length; i++){
+//     let quotient = Math.floor(remainder / note[i]);
+//     result[note[i]] = quotient;
+//     remainder = remainder % note[i]
+//   }
+
+//   console.log(result)
+// }
+// NoteNumber(126)
+
+//2nd way
+const note = [50,10,5,1];
+function NoteAndNumber(amount){
+  let result = {};
+  let remainder = amount;
+
+  for(let i = 0; i< note.length; i++){
+      if(remainder!==0){
+        let quotient = remainder/note[i];
+        result[note[i]] = parseInt(quotient);
+        remainder = remainder%note[i]
+      }
+  }
+  console.log(result)
+}
+
+NoteAndNumber(146)
+console.log(15/3) //5 quotient
+console.log(15%3) //0 remainder
 

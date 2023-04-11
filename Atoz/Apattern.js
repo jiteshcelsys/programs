@@ -1,21 +1,47 @@
-function Apattern(num){
-  let result ='';
-  for(let i=1; i<=num; i++){
-    for(let j=1; j<=num; j++){
-      if((i>=Math.floor(num/2)+1) && (j == 1)|| (i >= Math.floor(num/2) + 1) && (j == num)||(i==Math.floor(num/2)+1)||j-i==Math.floor(num/2)||){
-       
-        result =result+'*'
-      }
-      
-      
-      else{
-        result += ' '
-      }
-      
+const printA = (num) => {
+  let height = num;
+  let width = 2 * height - 1;
+  let result = "";
+  let n = parseInt(width / 2),
+    i,
+    j;
+  for (i = 0; i < height; i++) {
+    for (j = 0; j <= width; j++) {
+      if (
+        j == n ||
+        j == width - n ||
+        (i == parseInt(height / 2) && j > n && j < width - n)
+      )
+        result += "*";
+      else result += " ";
     }
-    result+= '\n';
+    result += "\n";
+    n--;
   }
-  console.log(result)
-}
+  console.log(result);
+};
+// printA(9);
 
-Apattern(15)
+const  printA=(num)=>{
+  let height = num;
+  let width = 2*height - 1;
+  let result = '';
+  let n = parseInt(width/2);
+  let i, j;
+  for( i = 0; i<height; i++){
+    for( j = 0; j<= width; j++){
+      if(
+        j==n ||
+        j==width - n ||
+        (i == parseInt(height/2) && j > n && j < width - n)
+      ){
+        result += "*"
+      }else{
+        result +=' ';
+      }
+    }
+    result += '\n';
+    n--;
+  }
+  console.log(result);
+}

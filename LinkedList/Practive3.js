@@ -24,7 +24,6 @@ class SinglyLinkedList {
       let temp = this.head;
       this.head = newNode;
       this.head.next = temp;
-      console.log(this.head.next.value);
       this.length++;
       return true;
     }
@@ -170,20 +169,53 @@ let list = new SinglyLinkedList;
 list.insert(0, 1);
 list.insert(1, 2);
 list.insert(2, 3);
-list.insert(3, 4);
-list.insert(4, 5);
-list.insert(5, 5);
-list.insert(6, 6);
-list.insert(7, 6);
-list.insert(8, 6);
+
 
 // console.log(list.removeByValue(2));
 // console.log(list.reverseList());
-console.log(list.middleOfLinkedList());
-console.log(list.print());
+// console.log(list.middleOfLinkedList());
+console.log(list);
 
 // list.removeByIndex(0));
 // console.log(list.removeByIndex(3));
 // console.log(list.removeByIndex(0));
 // list);
 // list.print();
+
+//position insertion
+/* insert(position, value) {
+    if (position < 1 && position > this.length) return false;
+    let newNode = new Node(value);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
+      this.length;
+      return true;
+    }
+    if (position === this.length+1) {
+      console.log('entered')
+      this.tail.next = newNode;
+      this.tail = newNode;
+      this.length++;
+      return true;
+    }
+    if (position === 1) {
+      let temp = this.head;
+      this.head = newNode;
+      this.head.next = temp;
+      this.length++;
+      return true;
+    }
+    let current = this.head;
+    let counter = 1;
+    let prev = current;
+    while (counter !== position) {
+      prev = current;
+      current = current.next;
+      counter++;
+    }
+    newNode.next = current;
+    prev.next = newNode;
+    this.length;
+    return true;
+  }*/

@@ -11,3 +11,5 @@ for (let i = 0, l = str.length; i < l; i++) {
 }
 
 console.log(newStr);
+console.log(newStr.length)
+console.log(str.length)

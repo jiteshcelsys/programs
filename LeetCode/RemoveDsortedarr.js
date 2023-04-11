@@ -6,7 +6,7 @@ function removeDuplicates(number, x = 0, count = 0) {
       count++;
     }
     if (number.length - 1 === x) {
-      number.length += count;
+      // number.length += count;
       return number;
     }
   }
@@ -14,7 +14,7 @@ function removeDuplicates(number, x = 0, count = 0) {
 }
 console.log(
   removeDuplicates([
-    1, 1,2,2
+  2,1,2,1,4,1,5,6
   ])
 );
 
@@ -46,3 +46,4 @@ console.log(
 
 // };
 // console.log(removeDuplicates([2,2,3,0,4,2]));
+

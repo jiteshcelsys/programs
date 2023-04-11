@@ -1,32 +1,31 @@
 class Node {
-  constructor(value){
+  constructor(value) {
     this.value = value;
     this.left = null;
     this.right = null;
   }
 }
-class BST{
-  constructor(){
+class BST {
+  constructor() {
     this.root = null;
   }
-  insert(value){
+  insert(value) {
     const newNode = new Node(value);
-    if(this.root === null){
+    if (this.root === null) {
       this.root = newNode;
       return this;
     }
     let temp = this.root;
-    while(true){
-      if(newNode.value === temp.value) return undefined;
-      if(newNode.value < temp.value){
-        if(temp.left === null){
+    while (true) {
+      if (newNode.value === temp.value) return undefined;
+      if (newNode.value < temp.value) {
+        if (temp.left === null) {
           temp.left = newNode;
           return this;
         }
-        temp= temp.left;
-      }
-      else{
-        if(temp.right === null){
+        temp = temp.left;
+      } else {
+        if (temp.right === null) {
           temp.right = newNode;
           return this;
         }
@@ -34,54 +33,46 @@ class BST{
       }
     }
   }
-  contains(value){
-    if(!this.root) return false;
+  contains(value) {
+    if (!this.root) return false;
     let temp = this.root;
-  
-    while(temp){
-        
-        if(value > temp.value  ){
-          temp = temp.right
-        }
-        else if(value < temp.value){
-            temp = temp.left;
-          }
-          else{
-            return true;
-          }
-        }
-        return false
-    }
-    minimumValue (){
-      if(!this.root) return undefined
-      let temp = this.root;
-      while(temp){
-        if(temp.left){
-          temp =temp.left
-        }
-        else{
 
-          return temp.value
-        }
+    while (temp) {
+      if (value > temp.value) {
+        temp = temp.right;
+      } else if (value < temp.value) {
+        temp = temp.left;
+      } else {
+        return true;
       }
     }
-    maximumValue(){
-      if(!this.root) return undefined;
-      let temp = this.root ;
-      while(temp){
-        if(temp.right){
-          temp = temp.right
-        }
-        else{
-
-          return temp.value
-        }
+    return false;
+  }
+  minimumValue() {
+    if (!this.root) return undefined;
+    let temp = this.root;
+    while (temp) {
+      if (temp.left) {
+        temp = temp.left;
+      } else {
+        return temp.value;
       }
     }
-  
+  }
+  maximumValue() {
+    if (!this.root) return undefined;
+    let temp = this.root;
+    while (temp) {
+      if (temp.right) {
+        temp = temp.right;
+      } else {
+        return temp.value;
+      }
+    }
+  }
 }
 
-let myBST =  new BST;
+let myBST = new BST();
 myBST.insert(100);
 myBST.insert(200);
 myBST.insert(150);
@@ -90,6 +81,6 @@ myBST.insert(10);
 myBST.insert(1);
 myBST.insert(300);
 // console.log(myBST.contains(150));
-console.log(myBST.minimumValue())
+// console.log(myBST.minimumValue())
 // console.log(myBST.maximumValue());
-// console.log(myBST);
+console.log(myBST);
