@@ -24,4 +24,31 @@ var romanToInt = (s) => {
   }
   return result;
 };
-console.log(romanToInt("IV"));
+// console.log(romanToInt("IV"));
+
+function findOutlier(integers){
+  let count = 0;
+   for(let i =0;i< integers.length ;i++){
+     if(integers[i]%2==0){
+       count++
+     }
+   }
+   let find =(count>=Math.floor(integers.length/2)&&count!==1)?true:false
+  //  console.log(find)
+  //  console.log(count);
+  //  console.log(Math.floor(integers.length/2))
+  for(let i = 0; i< integers.length ;i++){
+    if(find){
+      if(integers[i]%2 !==0||-0)
+      console.log(integers[i])
+      // return integers[i]
+    }
+    else if(!find){
+      if(integers[i]%2==0)
+      console.log(integers[i])
+        return integers[i]
+    }
+  }
+ }
+console.log( findOutlier([1,2,3,5,7,9,11]))
+// console.log( findOutlier([2,4,6,8,10,11,12,14,16,18,20]))

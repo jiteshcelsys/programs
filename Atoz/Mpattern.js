@@ -34,17 +34,4 @@ function Mpattern(n){
   }
   console.log(result)
 }
-// Mpattern(24);
-
-function removeDuplicates(number, x = 0){
-  for (let i = 0; i < number.length; i++) {
-   if(x !== number.lastIndexOf(number[x])){
-    number.splice(number.lastIndexOf(number[x]),1);
-   }
-   if(number.length-1 === x){
-    return number
-   }
-  }
-  return removeDuplicates(number, ++x)
-}
-console.log(removeDuplicates([1,2,1,1,1]))
+Mpattern(24);

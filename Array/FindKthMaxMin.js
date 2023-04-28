@@ -1,0 +1,3 @@
+function NthMaxMin(arr,nth){
+
+}

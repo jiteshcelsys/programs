@@ -17,20 +17,18 @@ function getNotes(note, amount) {
 
 
 const noteArr = [50 , 10, 5, 1];
-function NOtes(num){
-  const result = {};
-  let remainder = num;
-  for(let i = 0;i< noteArr.length; i++){
-    if(remainder!==0){
-      let quotient = remainder / noteArr[i];
-      result[noteArr[i]] = parseInt(quotient);
-      remainder = remainder % noteArr[i]
-    }
+function noteCount (amount){
+  let remainder = amount;
+  let obj = {};
+  for(let i = 0, l = noteArr.length; i < l; i++){
+    let quotient  = Math.floor(remainder / note[i]);
+    obj[note[i]] = quotient;
+    remainder = remainder % note[i];
   }
-  console.log(result);
-
+  console.log(obj)
 }
-NOtes(191);
+noteCount(102)
+
 
 
 

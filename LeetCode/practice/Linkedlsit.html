@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /*position static
+ /* .main-element{
+  position: static;
+  left :10px;
+  bottom:130px
+ }
+ .sibling-element{
+  padding: 10px;
+  background-color: red;
+ } */
+ /*left and bottom properties does not make any effect in an element*/
+ /*
+ position relative
+ it also act like static position but in this case if we use left right properties it will affect the element
+ */
+ /* .main-element{
+  position: relative;
+  left: 10px;
+  bottom: 50px;
+ }
+ .sibling-element{
+  background-color: red;
+ } */
+ /*absolute element*/
+ /*
+ it positioned relative to the parent element.
+ element is removed from the normal document flow
+ it should have the positioned value other than the static position 
+ if there is no positioned value it positioned relative to the html element 
+ */
+ /* .main-element{
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  background-color: yellow;
+  padding: 10px;
+ } */
+ /* .parent-element{
+  position: relative;
+  height: 100px;
+  padding: 5px;
+  background: blue;
+ } */
+ /* .sibling-element{
+  background-color: aqua;
+  padding: 10px;
+  border: 1px solid grey;
+ } */
+ /*fixed position*/
+ /*
+ it is also removed from the normal document flow
+ but unlike absolute position it always positioned according to the html element.
+ it is not affected by the scrolling.
+*/
+/* .main-element{
+  position: fixed;
+  top: 10px;
+  left: 10%
+}
+html{
+  height: 800px;
+} */
+/* position sticky*/
+/* it is the combination of relative and fixed element it acts like the relative element until a certain scroll point and then it become fixed*/
+.main-element{
+  position: sticky;
+  top: 10px;
+  background-color: yellow;
+  padding: 10px;
+}
+.parent-element{
+  position: relative;
+  height: 800px;
+  padding: 50px;
+  background-color: red;
+}
+  </style>
+</head>
+<body>
+ <h1>Position Properties</h1>
+  
+<div class="parent-element">
+  <div class="sibling-element">
+    I'm the other sibling element
+  </div>
+  <div class="main-element">
+    all the eyes on me. I am the main element
+  </div>
+  <div class="sibling-element">
+    I'm the other sibling element
+  </div>
+</div>
+  
+</body>
+</html>
